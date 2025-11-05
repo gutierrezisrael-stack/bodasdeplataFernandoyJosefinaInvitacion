@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bodas de Oro - Josefina y Fernando</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Cormorant Garamond',serif;
+  color:#4a3b00;
+  background:#fffaf0;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* --- FONDO GENERAL --- */
+.bg-collage{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:url('bda2.jpeg') center/400px repeat fixed;
+  filter:grayscale(15%) brightness(1.05) sepia(40%) hue-rotate(15deg);
+  opacity:0.25;
+  z-index:0;
+}
+
+/* --- HERO --- */
+.hero{
+  position:relative;
+  min-height:100vh;
+  background:linear-gradient(rgba(255,250,230,0.8),rgba(255,250,230,0.9)),
+             url('bda6.jpg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:2;
+  overflow:hidden;
+}
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:3.8rem;
+  background:linear-gradient(120deg,#c19a2b 0%,#f6e27a 25%,#d4af37 50%,#f7e98e 75%,#b88a00 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shine 8s linear infinite;
+  text-shadow:0 3px 6px rgba(180,150,50,0.25);
+  font-weight:700;
+  letter-spacing:1px;
+}
+@keyframes shine{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.hero p{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  color:#5b4a00;
+  font-weight:500;
+  margin-top:15px;
+  line-height:1.6;
+}
+.line{
+  width:120px;height:2px;
+  background:linear-gradient(to right,#d4af37,#f6e27a,#d4af37);
+  margin:20px auto;
+}
+
+/* --- CONTENIDO --- */
+.info{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:70px 20px;
+  max-width:900px;
+  margin:auto;
+}
+.info section{
+  background:rgba(255,250,235,0.95);
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(200,150,50,0.1);
+  margin:40px 0;
+  padding:40px 25px;
+  backdrop-filter:blur(6px);
+}
+.info h2{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  background:linear-gradient(135deg,#d4af37,#f7e98e,#c19a2b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+  margin-bottom:15px;
+}
+.info p{
+  font-size:1.05rem;
+  line-height:1.8;
+  color:#4a3b00;
+  font-weight:500;
+}
+
+/* --- FOTOS CON MARCO DORADO --- */
+.info img{
+  width:100%;
+  max-width:350px;
+  display:block;
+  margin:0 auto 20px;
+  border:6px solid #d4af37;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(200,150,50,0.3);
+}
+
+/* --- BOTÓN --- */
+a{
+  color:#7b6400;
+  text-decoration:none;
+  border-bottom:1px solid #d4af37;
+  transition:.3s;
+}
+a:hover{color:#a07f00;border-color:#a07f00;}
+.button{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 35px;
+  background:linear-gradient(135deg,#d4af37,#f7e98e,#c19a2b);
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:0.5px;
+  transition:all .3s ease;
+  box-shadow:0 6px 12px rgba(200,160,50,0.25);
+}
+.button:hover{
+  transform:scale(1.05);
+  background:linear-gradient(135deg,#f1cc52,#d4af37);
+}
+
+/* --- ROSAS DORADAS CAYENDO --- */
+.rose{
+  position:fixed;
+  top:-10%;
+  width:55px;
+  opacity:0.35;
+  animation:fall linear infinite;
+  filter:drop-shadow(0 0 6px rgba(210,160,60,0.8));
+  z-index:1;
+  pointer-events:none;
+}
+@keyframes fall{
+  0%{transform:translateY(0) rotate(0);}
+  100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px 20px;
+  font-size:1rem;
+  font-weight:500;
+  background:#fff8e1;
+  color:#5c4b00;
+  border-top:2px solid #e6c85a;
+  line-height:1.6;
+}
+
+/* Animaciones básicas */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- Fondo general -->
+<div class="bg-collage"></div>
+
+<!-- Encabezado principal -->
+<div class="hero">
+  <h1>Bodas de Oro</h1>
+  <div class="line"></div>
+  <p>Josefina Rosalia Maldonado Larios y<br>
+  Fernando Gutiérrez Arenas<br><br>
+  Invitan junto a sus hijos<br>
+  <strong>Israel y Maribel Gutiérrez Maldonado</strong><br>
+  a celebrar 50 años de amor y unión.</p>
+</div>
+
+<!-- Secciones -->
+<div class="info">
+  <section>
+    <img src="bda1.png" alt="Ceremonia Religiosa">
+    <h2>Ceremonia Religiosa</h2>
+    <p>Les esperamos el <strong>22 de noviembre a las 4:00 PM</strong> en la<br>
+    <strong>Capilla de Nuestra Señora de la Asunción</strong><br>
+    Av. Lázaro Cárdenas 34, Central Michoacana, Ecatepec de Morelos, Méx.</p>
+    <a href="https://maps.app.goo.gl/dyF3LukshnRh1JM18" target="_blank">Ver ubicación 📍</a>
+  </section>
+
+  <section>
+    <img src="bda3.png" alt="Comida de Celebración">
+    <h2>Comida de Celebración</h2>
+    <p>Después de la misa, acompáñanos a compartir una comida familiar<br>
+    en <strong>Avenida Halcón 4, Colonia Central Michoacana, Ecatepec de Morelos</strong>.</p>
+  </section>
+
+  <section>
+    <img src="bda4.jpeg" alt="Confirma tu asistencia">
+    <h2>Confirma tu Asistencia</h2>
+    <p>Tu presencia es el mejor regalo que podemos recibir.</p>
+    <a class="button" href="https://wa.me/5215516569477?text=Confirmo%20mi%20asistencia%20a%20las%20Bodas%20de%20Oro%20de%20Josefina%20y%20Fernando%20💛" target="_blank">Confirmar por WhatsApp</a>
+    <p style="margin-top:10px;font-size:0.95rem;color:#8b7500;">(Contacto: Israel Gutiérrez Maldonado)</p>
+  </section>
+</div>
+
+<footer>
+  Con cariño, la familia Gutiérrez Maldonado 💕<br>22 de noviembre de 2025
+</footer>
+
+<script>
+/* Rosas doradas cayendo */
+for(let i=0;i<25;i++){
+  const rose=document.createElement('img');
+  rose.src='rosa.png';
+  rose.classList.add('rose');
+  rose.style.left=Math.random()*100+'vw';
+  rose.style.animationDuration=6+Math.random()*8+'s';
+  rose.style.width=(40+Math.random()*40)+'px';
+  rose.style.opacity=0.3+Math.random()*0.2;
+  document.body.appendChild(rose);
+}
+</script>
+
+</body>
+</html>

@@ -15,26 +15,26 @@ body{
   position:relative;
 }
 
-/* --- FONDO GENERAL TAPIZADO CON BRILLO DORADO --- */
+/* --- FONDO TAPIZADO OPTIMIZADO --- */
 .bg-collage{
   position:fixed;
   top:0;left:0;
   width:100%;height:100%;
-  background:url('bda2.jpeg') center/100px repeat fixed;
-  filter:grayscale(5%) brightness(1.15) sepia(55%) saturate(1.3) hue-rotate(25deg);
-  opacity:0.35;
+  background:url('bda2.jpeg') center/120px repeat;
+  filter:brightness(1.05) sepia(35%) hue-rotate(15deg);
+  opacity:0.25;
   z-index:0;
 }
 .bg-collage::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(120deg,rgba(255,230,150,0.15),rgba(255,240,200,0.2),rgba(240,200,120,0.15));
-  animation:goldenGlow 12s ease-in-out infinite alternate;
+  background:linear-gradient(120deg,rgba(255,230,150,0.1),rgba(255,240,200,0.15),rgba(240,200,120,0.1));
+  animation:goldenGlow 10s ease-in-out infinite alternate;
 }
 @keyframes goldenGlow{
-  from{opacity:0.15;}
-  to{opacity:0.35;}
+  from{opacity:0.1;}
+  to{opacity:0.25;}
 }
 
 /* --- HERO --- */
@@ -55,8 +55,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.35);
-  backdrop-filter:brightness(0.95);
+  background:rgba(255,255,255,0.3);
   z-index:1;
 }
 .hero h1, .hero p, .line, .scroll-indicator{
@@ -70,7 +69,7 @@ body{
   background-size:300% 300%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  animation:shine 8s linear infinite, fadeDown 2s ease forwards;
+  animation:shine 6s linear infinite, fadeDown 1.5s ease forwards;
   text-shadow:0 3px 6px rgba(180,150,50,0.25);
   font-weight:700;
   letter-spacing:1px;
@@ -82,45 +81,44 @@ body{
 }
 .hero p{
   font-family:'Playfair Display',serif;
-  font-size:1.25rem;
+  font-size:1.2rem;
   color:#5b4a00;
   font-weight:500;
   margin-top:15px;
   line-height:1.6;
   opacity:0;
-  animation:fadeUp 2s ease 0.8s forwards;
+  animation:fadeUp 1.5s ease 0.5s forwards;
 }
 .line{
   width:120px;height:2px;
   background:linear-gradient(to right,#d4af37,#f6e27a,#d4af37);
   margin:20px auto;
   opacity:0;
-  animation:fadeUp 2s ease 0.5s forwards;
+  animation:fadeUp 1.2s ease 0.4s forwards;
 }
 
-/* --- INDICADOR DE DESLIZAMIENTO ELEGANTE --- */
+/* --- INDICADOR DE DESLIZAMIENTO --- */
 .scroll-indicator{
   position:absolute;
-  bottom:50px;
+  bottom:45px;
   text-align:center;
-  animation:fadeUp 3s ease 1.5s forwards;
+  animation:fadeUp 2s ease 1.2s forwards;
 }
 .scroll-indicator p{
   font-family:'Great Vibes',cursive;
-  font-size:1.3rem;
+  font-size:1.2rem;
   color:#b89100;
   text-shadow:0 1px 3px rgba(255,255,255,0.4);
-  margin-bottom:10px;
-  letter-spacing:0.5px;
+  margin-bottom:8px;
   opacity:0.85;
-  animation:glowText 4s ease-in-out infinite alternate;
+  animation:glowText 3s ease-in-out infinite alternate;
 }
 .arrow-container{
   position:relative;
-  width:24px;
-  height:40px;
+  width:22px;
+  height:35px;
   margin:0 auto;
-  animation:bounce 2s infinite;
+  animation:bounce 1.8s infinite;
 }
 .arrow-line{
   position:absolute;
@@ -128,30 +126,30 @@ body{
   left:50%;
   transform:translateX(-50%);
   width:2px;
-  height:30px;
+  height:26px;
   background:linear-gradient(to bottom,#d4af37,#f6e27a,#d4af37);
   border-radius:2px;
-  box-shadow:0 0 6px rgba(212,175,55,0.6);
+  box-shadow:0 0 5px rgba(212,175,55,0.6);
 }
 .arrow-head{
   position:absolute;
   bottom:0;
   left:50%;
   transform:translateX(-50%) rotate(45deg);
-  width:10px;
-  height:10px;
+  width:9px;
+  height:9px;
   border-bottom:2px solid #d4af37;
   border-right:2px solid #d4af37;
-  box-shadow:0 0 6px rgba(212,175,55,0.5);
+  box-shadow:0 0 5px rgba(212,175,55,0.5);
 }
 @keyframes glowText{
-  from{text-shadow:0 0 5px rgba(255,230,120,0.4);}
-  to{text-shadow:0 0 12px rgba(255,240,170,0.8);}
+  from{text-shadow:0 0 4px rgba(255,230,120,0.4);}
+  to{text-shadow:0 0 9px rgba(255,240,170,0.8);}
 }
 @keyframes bounce{
   0%,20%,50%,80%,100%{transform:translate(-50%,0);}
-  40%{transform:translate(-50%,10px);}
-  60%{transform:translate(-50%,5px);}
+  40%{transform:translate(-50%,8px);}
+  60%{transform:translate(-50%,4px);}
 }
 
 /* --- SECCIONES --- */
@@ -159,20 +157,20 @@ body{
   position:relative;
   z-index:2;
   text-align:center;
-  padding:70px 20px;
+  padding:60px 20px;
   max-width:900px;
   margin:auto;
 }
 .info section{
-  background:rgba(255,250,235,0.95);
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(200,150,50,0.1);
-  margin:40px 0;
-  padding:40px 25px;
-  backdrop-filter:blur(6px);
+  background:rgba(255,250,235,0.92);
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(200,150,50,0.08);
+  margin:30px 0;
+  padding:35px 25px;
+  backdrop-filter:blur(4px);
   opacity:0;
-  transform:translateY(50px);
-  transition:all 1s ease;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
 }
 .info section.visible{
   opacity:1;
@@ -180,17 +178,17 @@ body{
 }
 .info h2{
   font-family:'Playfair Display',serif;
-  font-size:1.8rem;
+  font-size:1.7rem;
   background:linear-gradient(135deg,#d4af37,#f7e98e,#c19a2b);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
   font-weight:700;
   margin-bottom:15px;
-  animation:fadeDown 1.5s ease;
+  animation:fadeDown 1.2s ease;
 }
 .info p{
   font-size:1.05rem;
-  line-height:1.8;
+  line-height:1.7;
   color:#4a3b00;
   font-weight:500;
 }
@@ -198,15 +196,15 @@ body{
 /* --- FOTOS CON MARCOS DORADOS --- */
 .info img{
   width:100%;
-  max-width:350px;
+  max-width:340px;
   display:block;
   margin:0 auto 20px;
-  border:6px solid #d4af37;
+  border:5px solid #d4af37;
   border-radius:12px;
-  box-shadow:0 6px 16px rgba(200,150,50,0.3);
+  box-shadow:0 5px 14px rgba(200,150,50,0.25);
   transform:scale(0.95);
   opacity:0;
-  transition:all 1s ease;
+  transition:all 0.8s ease;
 }
 .info img.visible{
   transform:scale(1);
@@ -239,14 +237,14 @@ a:hover{color:#a07f00;border-color:#a07f00;}
   background:linear-gradient(135deg,#f1cc52,#d4af37);
 }
 
-/* --- ROSAS DORADAS CAYENDO --- */
+/* --- ROSAS DORADAS (OPTIMIZADAS) --- */
 .rose{
   position:fixed;
   top:-10%;
-  width:28px;
-  opacity:0.4;
+  width:22px;
+  opacity:0.35;
   animation:fall linear infinite;
-  filter:drop-shadow(0 0 5px rgba(210,160,60,0.9));
+  filter:drop-shadow(0 0 5px rgba(210,160,60,0.8));
   z-index:5;
   pointer-events:none;
 }
@@ -258,7 +256,7 @@ a:hover{color:#a07f00;border-color:#a07f00;}
 /* --- FOOTER --- */
 footer{
   text-align:center;
-  padding:50px 20px;
+  padding:40px 20px;
   font-size:1rem;
   font-weight:500;
   background:#fff8e1;
@@ -268,14 +266,14 @@ footer{
 }
 
 /* --- ANIMACIONES BASE --- */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-25px)}to{opacity:1;transform:translateY(0)}}
 
 /* --- RESPONSIVE --- */
 @media(max-width:600px){
   .hero h1{font-size:3rem;}
-  .info img{max-width:300px;}
-  .info section{padding:30px 15px;}
+  .info img{max-width:280px;}
+  .info section{padding:25px 15px;}
 }
 </style>
 </head>
@@ -304,7 +302,7 @@ footer{
 
 <div class="info">
   <section>
-    <img src="bda1.png" alt="Ceremonia Religiosa">
+    <img src="bda1.png" loading="lazy" alt="Ceremonia Religiosa">
     <h2>Ceremonia Religiosa</h2>
     <p>Les esperamos el <strong>22 de noviembre a las 4:00 PM</strong> en la<br>
     <strong>Capilla de Nuestra Señora de la Asunción</strong><br>
@@ -313,14 +311,14 @@ footer{
   </section>
 
   <section>
-    <img src="bda3.png" alt="Comida de Celebración">
+    <img src="bda3.png" loading="lazy" alt="Comida de Celebración">
     <h2>Comida de Celebración</h2>
     <p>Después de la misa, acompáñanos a compartir una comida familiar<br>
     en <strong>Avenida Halcón 4, Colonia Central Michoacana, Ecatepec de Morelos</strong>.</p>
   </section>
 
   <section>
-    <img src="bda4.png" alt="Confirma tu asistencia">
+    <img src="bda4.png" loading="lazy" alt="Confirma tu asistencia">
     <h2>Confirma tu Asistencia</h2>
     <p>Tu presencia es el mejor regalo que podemos recibir.</p>
     <a class="button" href="https://wa.me/5215516569477?text=Confirmo%20mi%20asistencia%20a%20las%20Bodas%20de%20Oro%20de%20Josefina%20y%20Fernando%20💛" target="_blank">Confirmar por WhatsApp</a>
@@ -337,14 +335,14 @@ footer{
 <button id="musicToggle" style="position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#d4af37,#f7e98e,#c19a2b);color:white;border:none;border-radius:50%;width:55px;height:55px;box-shadow:0 4px 10px rgba(0,0,0,0.3);font-size:1.4rem;cursor:pointer;z-index:10;">🎵</button>
 
 <script>
-/* Rosas cayendo */
-for(let i=0;i<30;i++){
+/* Rosas cayendo (optimizado a 15) */
+for(let i=0;i<15;i++){
   const rose=document.createElement('img');
   rose.src='rosa.png';
   rose.classList.add('rose');
   rose.style.left=Math.random()*100+'vw';
-  rose.style.animationDuration=6+Math.random()*8+'s';
-  rose.style.width=(20+Math.random()*20)+'px';
+  rose.style.animationDuration=6+Math.random()*6+'s';
+  rose.style.width=(18+Math.random()*16)+'px';
   rose.style.opacity=0.25+Math.random()*0.3;
   document.body.appendChild(rose);
 }
@@ -356,7 +354,7 @@ const observer = new IntersectionObserver(entries=>{
       entry.target.classList.add('visible');
     }
   });
-},{threshold:0.2});
+},{threshold:0.15});
 document.querySelectorAll('.info section, .info img').forEach(el=>observer.observe(el));
 
 /* 🎶 Música automática con botón */
@@ -366,18 +364,14 @@ let playing=false;
 
 function startMusic(){
   if(!playing){
-    music.volume=0;
-    const fade=setInterval(()=>{
-      if(music.volume<1) music.volume+=0.05;
-      else clearInterval(fade);
-    },200);
+    music.volume=0.9;
     music.play().then(()=>{
       playing=true;
       toggle.textContent='⏸';
     }).catch(()=>console.log("Autoplay bloqueado"));
   }
 }
-window.addEventListener('load',()=>startMusic());
+window.addEventListener('load',()=>setTimeout(startMusic,1200));
 ['click','scroll','touchstart'].forEach(ev=>{
   document.addEventListener(ev,()=>startMusic(),{once:true});
 });

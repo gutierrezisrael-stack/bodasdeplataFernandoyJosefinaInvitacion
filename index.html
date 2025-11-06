@@ -41,7 +41,7 @@ body{
 .hero{
   position:relative;
   min-height:100vh;
-  background:linear-gradient(rgba(255,250,230,0.6),rgba(255,250,230,0.75)),
+  background:linear-gradient(rgba(255,250,230,0.85),rgba(255,250,230,0.95)),
              url('bda6.jpg') center/cover no-repeat;
   display:flex;
   flex-direction:column;
@@ -50,14 +50,19 @@ body{
   text-align:center;
   overflow:hidden;
   z-index:2;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeInHero 2s ease forwards;
 }
-@keyframes fadeInHero{
-  to{opacity:1;transform:translateY(0);}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.35); /* controla opacidad de la imagen */
+  backdrop-filter:brightness(0.95);
+  z-index:1;
 }
-
+.hero h1, .hero p, .line{
+  position:relative;
+  z-index:2;
+}
 .hero h1{
   font-family:'Great Vibes',cursive;
   font-size:4rem;
@@ -83,14 +88,14 @@ body{
   margin-top:15px;
   line-height:1.6;
   opacity:0;
-  animation:fadeUp 2s ease 1s forwards;
+  animation:fadeUp 2s ease 0.8s forwards;
 }
 .line{
   width:120px;height:2px;
   background:linear-gradient(to right,#d4af37,#f6e27a,#d4af37);
   margin:20px auto;
   opacity:0;
-  animation:fadeUp 2s ease 0.8s forwards;
+  animation:fadeUp 2s ease 0.5s forwards;
 }
 
 /* --- SECCIONES --- */
@@ -110,7 +115,7 @@ body{
   padding:40px 25px;
   backdrop-filter:blur(6px);
   opacity:0;
-  transform:translateY(60px);
+  transform:translateY(50px);
   transition:all 1s ease;
 }
 .info section.visible{
@@ -125,6 +130,7 @@ body{
   -webkit-text-fill-color:transparent;
   font-weight:700;
   margin-bottom:15px;
+  animation:fadeDown 1.5s ease;
 }
 .info p{
   font-size:1.05rem;
@@ -249,7 +255,7 @@ footer{
   </section>
 
   <section>
-    <img src="bda4.jpeg" alt="Confirma tu asistencia">
+    <img src="bda4.png" alt="Confirma tu asistencia">
     <h2>Confirma tu Asistencia</h2>
     <p>Tu presencia es el mejor regalo que podemos recibir.</p>
     <a class="button" href="https://wa.me/5215516569477?text=Confirmo%20mi%20asistencia%20a%20las%20Bodas%20de%20Oro%20de%20Josefina%20y%20Fernando%20💛" target="_blank">Confirmar por WhatsApp</a>
@@ -260,6 +266,10 @@ footer{
 <footer>
   Con cariño, la familia Gutiérrez Maldonado 💕<br>22 de noviembre de 2025
 </footer>
+
+<!-- 🎵 MÚSICA -->
+<audio id="bg-music" src="Toda Una Vida.mp3" preload="auto" loop></audio>
+<button id="musicToggle" style="position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#d4af37,#f7e98e,#c19a2b);color:white;border:none;border-radius:50%;width:55px;height:55px;box-shadow:0 4px 10px rgba(0,0,0,0.3);font-size:1.4rem;cursor:pointer;z-index:10;">🎵</button>
 
 <script>
 /* Rosas cayendo */
@@ -281,8 +291,35 @@ const observer = new IntersectionObserver(entries=>{
       entry.target.classList.add('visible');
     }
   });
-},{threshold:0.25});
+},{threshold:0.2});
 document.querySelectorAll('.info section, .info img').forEach(el=>observer.observe(el));
+
+/* 🎶 Música automática con botón */
+const music=document.getElementById('bg-music');
+const toggle=document.getElementById('musicToggle');
+let playing=false;
+
+function startMusic(){
+  if(!playing){
+    music.volume=0;
+    const fade=setInterval(()=>{
+      if(music.volume<1) music.volume+=0.05;
+      else clearInterval(fade);
+    },200);
+    music.play().then(()=>{
+      playing=true;
+      toggle.textContent='⏸';
+    }).catch(()=>console.log("Autoplay bloqueado"));
+  }
+}
+window.addEventListener('load',()=>startMusic());
+['click','scroll','touchstart'].forEach(ev=>{
+  document.addEventListener(ev,()=>startMusic(),{once:true});
+});
+toggle.addEventListener('click',()=>{
+  if(playing){music.pause();playing=false;toggle.textContent='🎵';}
+  else{music.play();playing=true;toggle.textContent='⏸';}
+});
 </script>
 
 </body>
